@@ -1,30 +1,32 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+
+import React, {  useState } from 'react'
 import Header from '../header/page'
 
 
 
-import { useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import getStipePromise from '@/app/lib/stripe';
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { selectUser } from '@/redux/userSlice';
-import { toast } from 'react-toastify';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import { validateJWTToken } from "@/helpers/tokenValidation";
-import StripeCheckout from 'react-stripe-checkout';
-import { useDispatch } from 'react-redux';
+
+import { SET_USER, selectUser } from '@/redux/userSlice';
+
 import { selectUserOrder } from '@/redux/orderSlice';
 
-const page = () => {
+
+const UserCheck = () => {
+
+
+
+  
+
+
   
     const user= useSelector(selectUser)
     const hotel= useSelector(selectUserOrder)
 
-console.log(hotel);
+
+
 
     
 
@@ -53,7 +55,7 @@ console.log(hotel);
         {
               name: hotel.name,
               hotel: hotel.hotel,
-              user: user._id,
+              user: hotel.user,
               fromSlot: hotel.fromSlot,
               toSlot: hotel.toSlot,
               totalAmount: hotel.totalAmount,
@@ -64,7 +66,7 @@ console.log(hotel);
     const saveItem= {
         name: hotel.name,
         hotel: hotel.hotel,
-        user: user._id,
+        user: hotel.user,
         fromSlot: hotel.fromSlot,
         toSlot: hotel.toSlot,
         totalAmount: hotel.totalAmount,
@@ -133,4 +135,4 @@ console.log(hotel);
   )
 }
 
-export default page
+export default UserCheck

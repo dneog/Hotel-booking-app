@@ -111,7 +111,7 @@ const BookDate = ({hotel}) => {
         }
       ))
 
-      route.push('/form')
+      route.push('/userCheck')
     }
 
       

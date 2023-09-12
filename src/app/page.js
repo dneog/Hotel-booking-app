@@ -25,7 +25,7 @@ export default async function Home() {
     <Header />
 
     <div className="flex flex-wrap mt-3 justify-center">
-      {hotels.map((hotel)=> (
+      {hotels && hotels.map((hotel)=> (
            <HomeCards key={hotel._id} hotel={hotel} />
       ))}
    
