@@ -108,10 +108,10 @@ const Login = () => {
             <button type='submit' className='bg-emerald-600 text-white p-2 rounded-sm'>{loading ? <Spinner /> : "Login"}</button>
 
         </form>
-        <div className='flex flex-col w-[350px] justify-center m-auto'>
+       
     <p className='text-center mt-1 mb-2'>or</p>
-    <button type='submit' className=' text-black border border-gray-700 p-2 rounded-sm hover:bg-slate-50 ' onClick={handleLoginGuest}>Login with Test Account</button>
-    </div>
+    <button type='submit' className=' text-black border w-[100%] border-gray-700 p-[7.2px] rounded-sm hover:bg-slate-50 ' onClick={handleLoginGuest}>Login with Test Account</button>
+   
 
     </div>
     
