@@ -63,7 +63,7 @@ const register= async (e)=> {
   return (
     <>
    {!user && <Spinner />}
-    <div className='max-w-[26%] min-w-[400px]  p-5 pb-7  m-auto mt-[10px] rounded-md shadow-md bg-slate-50'>
+    <div className='max-w-[26%] min-w-[400px]  p-5 pb-7  m-auto mt-[10px] rounded-md shadow-md bg-white'>
         <form onSubmit={register} className='flex flex-col'>
         <label htmlFor="">Name</label>
         <input type="text" className='p-2 mt-1 mb-3 rounded-sm border border-gray-400' name="name" value={name} onChange={handleInputChange} id="" placeholder='Name' />

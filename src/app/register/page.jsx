@@ -64,7 +64,7 @@ const Register = () => {
   return (
     <>
     <HeaderLogin />
-    <div className='max-w-[26%] min-w-[350px]  p-5 pb-7 border border-gray-500 m-auto mt-[110px] bg-white'>
+    <div className='max-w-[26%] min-w-[350px]  p-5 pb-7  shadow-xl rounded-lg m-auto mt-[110px] bg-white'>
         <form action="" onSubmit={register} className='flex flex-col space-y-4'>
             <p className='text-[18px] text-center mt-1'>Create an Account</p>
 

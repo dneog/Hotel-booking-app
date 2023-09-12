@@ -97,7 +97,7 @@ const Login = () => {
     <HeaderLogin />
 
  
-    <div className='max-w-[26%] min-w-[350px]  p-5 pb-7 border border-gray-500 m-auto mt-[110px] bg-white'>
+    <div className='max-w-[26%] min-w-[350px]  p-5 pb-7 shadow-xl rounded-lg m-auto mt-[110px] bg-white'>
         <form action="" onSubmit={register} className='flex flex-col space-y-4'>
             <p className='text-[18px] text-center mt-1'>Login</p>
 
@@ -108,15 +108,16 @@ const Login = () => {
             <button type='submit' className='bg-emerald-600 text-white p-2 rounded-sm'>{loading ? <Spinner /> : "Login"}</button>
 
         </form>
+        <div className='flex flex-col w-[350px] justify-center m-auto'>
+    <p className='text-center mt-1 mb-2'>or</p>
+    <button type='submit' className=' text-black border border-gray-700 p-2 rounded-sm hover:bg-slate-50 ' onClick={handleLoginGuest}>Login with Test Account</button>
+    </div>
 
     </div>
     
     <p className='text-center pt-3'>Don't have an Account ? <Link href={'/register'}><span className='text-sky-800'>Signup</span></Link></p>
 
-    <div className='flex flex-col w-[350px] justify-center m-auto'>
-    <p className='text-center mt-1 mb-2'>or</p>
-    <button type='submit' className=' text-black border border-gray-700 p-2 rounded-sm hover:bg-slate-50 ' onClick={handleLoginGuest}>Login with Test Account</button>
-    </div>
+    
    
     
     

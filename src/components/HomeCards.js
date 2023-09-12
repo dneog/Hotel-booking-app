@@ -14,7 +14,7 @@ const HomeCards = ({hotel}) => {
     return text
   }
   return (
-    <div className='max-w-xs bg-white border rounded-lg shadow border-gray-700 m-3'>
+    <div className='max-w-xs bg-white rounded-lg shadow-lg border border-gray-200  m-3'>
         <img className='rounded-t-lg' src={hotel.image} alt="" />
 
         <div className='p-2 flex justify-between items-center'>
