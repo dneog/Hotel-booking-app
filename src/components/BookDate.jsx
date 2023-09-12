@@ -107,7 +107,10 @@ const BookDate = ({hotel}) => {
           fromSlot,
           toSlot,
           totalAmount: total,
-          image: hotel.image
+          image: hotel.image,
+          description: hotel.description,
+          location: hotel.location,
+          
         }
       ))
 

@@ -35,7 +35,7 @@ export async function GET(request){
       const userId= await validateJWTToken(request)
       const {searchParams}= new URL(request.url)
       const user= searchParams.get('current') 
-      const userBookings= await Booking.find({user}).populate('hotels')
+      const userBookings= await Booking.find({user})
       return NextResponse.json({
         data: userBookings
       })

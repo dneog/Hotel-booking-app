@@ -12,6 +12,7 @@ import getStipePromise from '@/app/lib/stripe';
 import { SET_USER, selectUser } from '@/redux/userSlice';
 
 import { selectUserOrder } from '@/redux/orderSlice';
+import Spinner from '@/spinner/Spinner';
 
 
 const UserCheck = () => {
@@ -26,7 +27,7 @@ const UserCheck = () => {
     const hotel= useSelector(selectUserOrder)
 
 
-
+const [loading, setLoading]= useState(false)
 
     
 
@@ -77,13 +78,17 @@ const UserCheck = () => {
         pin : formData.pin, 
         state : formData.state, 
         country: formData.country,
-        image: hotel.image
+        image: hotel.image,
+        description: hotel.description,
+        location: hotel.location,
+        
     }  
 
 
       const storeItems= JSON.stringify(saveItem)
 
     const handleSubmit= async (e)=> {
+      setLoading(true)
         e.preventDefault()
         localStorage.setItem('item', storeItems)
 
@@ -101,7 +106,7 @@ const UserCheck = () => {
           stripe?.redirectToCheckout({ sessionId: data.session.id });
         }
 
-        
+        setLoading(false)
 
     }
 
@@ -115,19 +120,19 @@ const UserCheck = () => {
     <div className=' w-[38%] m-auto mt-12 shadow-xl bg-white rounded-lg p-5 '>
         <p className='pb-4 text-lg text-center  text-purple-600'>Address</p>
         <form className='flex flex-col space-y-3' onSubmit={handleSubmit}>
-            <input type="text" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='Name' name='userName' value={userName} onChange={handleInputChange} />
-            <textarea type="text" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='Address' name='address' value={address} onChange={handleInputChange} />
-            <input type="text" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='City' name='city' value={city} onChange={handleInputChange} />
+            <input type="text" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='Name' name='userName' value={userName} onChange={handleInputChange} />
+            <textarea type="text" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='Address' name='address' value={address} onChange={handleInputChange} />
+            <input type="text" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='City' name='city' value={city} onChange={handleInputChange} />
 
-            <input type="number" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='Phone Number' name='phone' value={phone} onChange={handleInputChange} />
+            <input type="number" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='Phone Number' name='phone' value={phone} onChange={handleInputChange} />
 
-            <input type="number" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='Pin' name='pin' value={pin} onChange={handleInputChange} />
+            <input type="number" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='Pin' name='pin' value={pin} onChange={handleInputChange} />
 
-            <input type="text" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='State' name='state' value={state} onChange={handleInputChange} />
+            <input type="text" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='State' name='state' value={state} onChange={handleInputChange} />
 
-            <input type="text" className='border border-gray-300 rounded-sm px-2 py-1' placeholder='Country' name='country' value={country} onChange={handleInputChange} />
+            <input type="text" className='border border-gray-300 rounded-sm px-2 py-[5px]' placeholder='Country' name='country' value={country} onChange={handleInputChange} />
 
-            <button className='bg-purple-500 text-white rounded-sm px-2 py-[7px]' type='submit'>Submit</button>
+            <button className='bg-purple-500 text-white rounded-sm px-2 py-[7px]' type='submit'>{loading ? <Spinner /> : 'Submit' }</button>
         </form>
     </div>
     </>

@@ -79,29 +79,14 @@ export default function UserViewPopup({hotel}) {
             <Typography  gutterBottom>
           <TextField className='w-[500px]' id="outlined-multiline-static"  multiline
            placeholder='Description' label="Description"
-          defaultValue="Hotel Description" variant="standard"  value={hotel.hotel.description}  />
+          defaultValue="Hotel Description" variant="standard"  value={hotel.description}  />
           </Typography>
 
           <Typography  gutterBottom>
-          <TextField className='w-[500px]' id="standard-basic" label="Location" variant="standard" value={hotel.hotel.location}  />
+          <TextField className='w-[500px]' id="standard-basic" label="Location" variant="standard" value={hotel.location}  />
           </Typography>
 
-          <Typography  gutterBottom>
-          <TextField className='w-[500px]' id="standard-basic" label="Features 1" variant="standard"  value={hotel.hotel.about1}  />
-          </Typography>
-
-          <Typography  gutterBottom>
-          <TextField className='w-[500px]' id="standard-basic" label="Features 2" variant="standard" name='about2' value={hotel.hotel.about2}  />
-          </Typography>
-
-          <Typography  gutterBottom>
-          <TextField className='w-[500px]' id="standard-basic" label="Highlights" variant="standard" name='about' value={hotel.hotel.about} />
-          </Typography>
-
-
-            <Typography gutterBottom>
-          <TextField className='w-[500px]' id="outlined-number" type='number' label="Rent per Day" variant="standard" name='rent' value={hotel.hotel.rent}  />
-          </Typography>
+         
 
             
           
