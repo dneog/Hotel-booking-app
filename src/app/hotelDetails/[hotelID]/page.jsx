@@ -22,12 +22,14 @@ const HotelDetails = async ({params}) => {
     <>
     <Header />
     <div className='flex max-w-[1250px] max-md:flex-wrap m-auto mt-5'>
-      <div className='w-[100%] ml-3 mr-3'>
-      <img className='min-w-[580px]  rounded-md' src={hotel.image} alt="" />
+      <div className='w-[50%] max-md:w-full ml-3 mr-3'>
+      <img className='w-full  h-auto rounded-md' src={hotel.image} alt="" />
       <BookDate hotel={hotel} />
       </div>
-     
-      <HotelInfo hotel={hotel} />
+     <div className='w-[50%] max-md:w-full'>
+     <HotelInfo hotel={hotel} />
+     </div>
+      
     </div>
     
     
