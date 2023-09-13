@@ -65,7 +65,7 @@ const Header = () => {
 const onLogout= async ()=> {
   try {
     await axios.get(`/api/users/logout`)
-    router.push('/login')
+    
     toast.success('Logout Successful', {
       position: "top-center",
       });
@@ -92,8 +92,8 @@ const handleClick=()=> {
             <p className=''>Home</p>
             </Link>
 
-          {users!== null ? (<p className='cursor-pointer' onClick={onLogout}>Logout</p>) :  (<Link href={'/login'}>
-            <p>Login</p>
+          {users!== null ? (<Link href={'/login'}><button className='cursor-pointer' onClick={onLogout}>Logout</button></Link>) :  (<Link href={'/login'}>
+            <button>Login</button>
             </Link>) }
 
           {users!== null && <Link href={users.isAdmin === false ? '/profile' : '/admin'}><FaUserCircle size={25} /></Link>}

@@ -64,15 +64,16 @@ const register= async (e)=> {
     <>
    {!user && <Spinner />}
     <div className='max-w-[26%] min-w-[400px]  p-5 pb-7  m-auto mt-[10px] rounded-md shadow-md bg-white'>
+      <p className='text-lg font-semibold border-b-2 mb-2 pb-1'>Profile Details</p>
         <form onSubmit={register} className='flex flex-col'>
         <label htmlFor="">Name</label>
-        <input type="text" className='p-2 mt-1 mb-3 rounded-sm border border-gray-400' name="name" value={name} onChange={handleInputChange} id="" placeholder='Name' />
+        <input type="text" className='p-2 mt-1 mb-3 rounded-sm border border-gray-400' disabled name="name" value={name} onChange={handleInputChange} id="" placeholder='Name' />
         <label htmlFor="">Email</label>
         <input type="email" name="email" value={email} onChange={handleInputChange} id="" placeholder='Email' disabled  className='p-2 rounded-sm border border-gray-400 mt-1 mb-3'/>
-        <label htmlFor="">Update Password</label>
-        <input type="password" name="password" value={password} onChange={handleInputChange} id="" placeholder='Password' className='p-2 rounded-sm border border-gray-400 mt-1 mb-3' />
+        {/* <label htmlFor="">Update Password</label> */}
+        {/* <input type="password" name="password" value={password} onChange={handleInputChange} id="" placeholder='Password' className='p-2 rounded-sm border border-gray-400 mt-1 mb-3' /> */}
 
-        <button type='submit' className='bg-emerald-600 text-white p-2 mt-1 mb-3 rounded-sm'>{loading ? <Spinner /> : "Update Profile"}</button>
+        {/* <button type='submit' className='bg-emerald-600 text-white p-2 mt-1 mb-3 rounded-sm'>{loading ? <Spinner /> : "Update Profile"}</button> */}
         
 
     </form> 
