@@ -64,7 +64,7 @@ const Header = () => {
 
 const onLogout= async ()=> {
   try {
-    await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/users/logout`)
+    await axios.get(`/api/users/logout`)
     router.push('/login')
     toast.success('Logout Successful', {
       position: "top-center",
